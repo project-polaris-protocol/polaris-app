@@ -8,11 +8,10 @@
   - プログラム情報・ステージ情報のマルチデバイス同期
 - マスターコントロール機能
   - 進行管理
-- CSV取り込み機能(Polaris無印互換)
+- CSV取り込み機能(Polaris-4kbc 互換)
 - .plr取り込み機能(Polaris Cloud互換)
 - ライブチャット機能
   - テキストチャット
-  - ボイスチャット
 
 ### 技術選定
 
@@ -25,7 +24,29 @@
 - パッケージ管理ツール
   - npm
 
+## UI
+
+- index
+- login
+- console
+- setting
+
+## API
+
+- GET /console/
+- POST /items
+- PUT /items
+- DELETE /items
+- GET /items/project?id=
+- GET /items/section?id=
+- GET /items/content?id=
+
 ## データベース設計
+
+- users
+- project
+- section
+- content
 
 ## 機能設計
 
