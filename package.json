@@ -2,14 +2,23 @@
   "name": "nuxt-app",
   "private": true,
   "type": "module",
+<<<<<<< HEAD
   "scripts": {
     "build": "nuxt build",
+=======
+  "version": "0.0.1",
+  "author": "Handa Kengo @sasanqua-create",
+  "description": "Polaris Protcolに準拠したクライアントアプリケーションです",
+  "scripts": {
+    "build": "nuxi build",
+>>>>>>> 854a2fc100cc715def0ca95665aab0be77704550
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+<<<<<<< HEAD
     "nuxt": "^3.10.0",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
@@ -22,3 +31,13 @@
     "tailwindcss": "^3.4.1"
   }
 }
+=======
+    "nuxt": "^3.10.3",
+    "nuxt-electron": "^0.7.0",
+    "vite-electron-plugin": "^0.8.3",
+    "vite-plugin-electron-renderer": "^0.14.5",
+    "vue": "^3.4.19",
+    "vue-router": "^4.3.0"
+  }
+}
+>>>>>>> 854a2fc100cc715def0ca95665aab0be77704550
