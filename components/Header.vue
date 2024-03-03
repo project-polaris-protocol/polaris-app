@@ -2,10 +2,15 @@
 	const { metadata, layerdata, layerIndex } = usePLprotoStore();
 </script>
 <template>
-	<div class="">
+	<div v-if="metadata">
 		<div class="navbar bg-base-100">
 			<div class="flex-1">
-				{{ metadata }}
+				<div class="flex">
+					<div class="font-semibold text-xl">
+						{{ metadata.projectName }}
+					</div>
+					<div>{{ layerdata[layerIndex] }}</div>
+				</div>
 			</div>
 			<div class="flex-none">
 				<img src="/logo_text.png" class="h-16" />
