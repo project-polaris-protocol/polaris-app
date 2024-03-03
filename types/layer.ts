@@ -5,7 +5,7 @@ interface Celldata {
 }
 
 export interface Layerdata {
-	layerCode: string;
+	projectCode: string;
 	layerName: string;
 	layerIndex: Number;
 	layerNumber: string;

@@ -4,11 +4,11 @@ interface Celldata {
 	pointer: Number | String;
 }
 
-export interface Programdata {
+export interface Layerdata {
 	projectCode: string;
-	programName: string;
-	programIndex: Number;
-	programNumber: string;
+	layerName: string;
+	layerIndex: Number;
+	layerNumber: string;
 	stt: Date | null;
 	end: Date | null;
 	aud: string;

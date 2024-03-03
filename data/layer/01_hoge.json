@@ -1,0 +1,40 @@
+{
+    "projectCode": "pjpl-demo",
+    "layerName": "デモレイヤー１",
+    "layerIndex": 0,
+    "layerNumber": "01.",
+    "stt": "2024/03/03T03:00:00",
+    "end": "2024/03/03T04:00:00",
+    "aud": "Project Polaris",
+    "iss": "hoge",
+    "isc": "hoge",
+    "body": [
+        [
+            {
+                "object": "ABSOLUTE",
+                "color": "",
+                "pointer": ""
+            },
+            {
+                "object": "ABSOLUTE",
+                "color": "",
+                "pointer": ""
+            },
+            {
+                "object": "ABSOLUTE",
+                "color": "",
+                "pointer": ""
+            },
+            {
+                "object": "ABSOLUTE",
+                "color": "",
+                "pointer": ""
+            },
+            {
+                "object": "ABSOLUTE",
+                "color": "",
+                "pointer": ""
+            }
+        ]
+    ]
+}
