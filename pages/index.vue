@@ -1,11 +1,15 @@
 <script setup lang="ts">
 	const { data, error, pending } = await useFetch('/api/meta', {});
-	console.log(data.value);
 </script>
 <template>
 	<div class="h-screen w-screen flex">
 		<div class="w-1/2 h-full">
-			<div v-if="pending"></div>
+			<div></div>
+			<div>
+				<div>{{ data.data.projectCode }}</div>
+				<div>{{ data.data.projectName }}</div>
+				<div>{{ data.data.aud }}</div>
+			</div>
 		</div>
 		<div class="w-1/2 bg-primary flex flex-col items-center justify-center">
 			<div class="h-1/3">
