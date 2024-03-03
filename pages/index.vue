@@ -4,11 +4,17 @@
 <template>
 	<div class="h-screen w-screen flex">
 		<div class="w-1/2 h-full">
-			<div></div>
-			<div>
-				<div>{{ data.data.projectCode }}</div>
-				<div>{{ data.data.projectName }}</div>
-				<div>{{ data.data.aud }}</div>
+			<div v-if="pending"></div>
+			<div v-else class="flex items-center justify-center h-full">
+				<div class="w-5/6">
+					<div class="text-left mb-2">{{ data.data.projectCode }}</div>
+					<div class="text-left text-3xl">{{ data.data.projectName }}</div>
+					<div class="divider w-full"></div>
+					<div class="">{{ data.data.aud }}</div>
+					<div class="mt-6">
+						<NuxtLink class="btn btn-primary btn-outline">クイックスタートガイド</NuxtLink>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="w-1/2 bg-primary flex flex-col items-center justify-center">
