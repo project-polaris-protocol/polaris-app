@@ -1,7 +1,6 @@
-export default defineEventHandler(async (event) => {
-	const items_: any = await import('~/data/meta.json');
-	const items_total: any[] = items_.default;
-	return {
-		data: items_total,
-	};
+import type { Metadata } from '~/server/types/meta.ts';
+export default defineEventHandler(async (event: any) => {
+	const meta_: any = await import('~/data/meta.json');
+	const meta: Metadata = meta_.default;
+	return meta;
 });
