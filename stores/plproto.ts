@@ -11,7 +11,7 @@ export const usePLprotoStore = defineStore(
 		const setMetadata = (meta: Metadata) => {
 			metadata.value = meta;
 		};
-		const setLayerdata = (layer: Layerdata) => {
+		const setLayerdata = (layer: Layerdata[]) => {
 			layerdata.value = layer;
 		};
 		const setLayerIndex = (index: Number) => {

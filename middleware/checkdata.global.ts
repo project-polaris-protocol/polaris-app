@@ -5,7 +5,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
 	if (to.path === '/setup') {
 		return;
 	}
-	const { metadata, layerdata, setMetadata } = usePLprotoStore();
+	const { metadata, layerdata, setMetadata, setLayerdata } = usePLprotoStore();
 	const { data, error, pending } = await useFetch('/api/meta', {});
 	if (process.server) {
 		return;
@@ -17,5 +17,13 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
 			console.log(data.value);
 			setMetadata(data.value);
 		}
+	}
+	if (to.path === '/') {
+		return;
+	}
+	if (layerdata.length === 0) {
+		const { data, error, pending } = await useFetch('/api/layer');
+		setLayerdata(data.value);
+		console.log(data.value);
 	}
 });
