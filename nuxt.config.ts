@@ -1,7 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	ssr: true,
-	target: 'server',
+	target: 'static',
+	nitro: {
+		prerender: {
+			routes: ['/pages/static'],
+		},
+	},
 	devtools: { enabled: true },
 	css: ['~/assets/css/main.css'],
 	postcss: {
