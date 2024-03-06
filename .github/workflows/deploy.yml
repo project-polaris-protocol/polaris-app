@@ -6,19 +6,9 @@ on:
         branches: [main]
 jobs:
     deploy:
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
         steps:
-            - uses: actions/checkout@v2
-            - name: Install SSH Key for Deploy
-              uses: appleboy/ssh-action@master
-              with:
-                  key: ${{ secrets.SK }}
-                  host: ${{secrets.SSH_HOST}}
-                  username: ${{secrets.SSH_USERNAME}}
-                  port: ${{secrets.SSH_PORT}}
-                  script: |
-                      cd hosting/polaris/polaris-stage
-                      git pull origin main
-                      npm install
-                      npm build
-                      npx serve .output/public/ -p 5001
+            - name: npm prepare
+              run: npm install && npm build
+            - name: npx build
+              run: node .output/server/index.mjs -p 5001
