@@ -8,6 +8,10 @@ jobs:
     deploy:
         runs-on: self-hosted
         steps:
+            - name: mode directory
+              run: cd /home/sasanqua/system/polaris/polaris-stage
+            - name: git
+              run: git pull
             - name: npm prepare
               run: npm install && npm build
             - name: npx build
