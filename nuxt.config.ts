@@ -4,7 +4,7 @@ export default defineNuxtConfig({
 	target: 'static',
 	nitro: {
 		prerender: {
-			routes: ['/pages/static'],
+			failOnError: false,
 		},
 	},
 	devtools: { enabled: true },
