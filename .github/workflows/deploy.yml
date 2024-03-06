@@ -9,7 +9,7 @@ jobs:
         runs-on: self-hosted
         steps:
             - name: mode directory
-              run: cd /home/sasanqua/system/polaris/polaris-stage
+              run: cd /home/sasanqua/hosting/polaris/polaris-stage
             - name: git
               run: git pull
             - name: npm prepare
