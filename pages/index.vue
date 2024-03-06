@@ -1,7 +1,11 @@
 <script setup lang="ts">
 	const { metadata } = usePLprotoStore();
-	const join_controller = () => {};
-	const join_worker = () => {};
+	const join_controller = () => {
+		navigateTo('/console');
+	};
+	const join_worker = () => {
+		navigateTo('/display');
+	};
 </script>
 <template>
 	<div>
