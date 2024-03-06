@@ -8,10 +8,10 @@
 	<div>
 		<Header />
 		<div class="flex pt-4">
-			<div class="w-1/3 px-3">
+			<div class="w-1/3 px-3 max-w-xl">
 				<ChatRoom />
 			</div>
-			<div class="w-1/2 px-3">
+			<div class="w-full px-3">
 				<LiveScript />
 			</div>
 			<div class="w-1/6">
