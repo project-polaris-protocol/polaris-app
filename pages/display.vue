@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import Header from '~/components/header.vue';
+	import Header from '~/components/Header.vue';
 	import ChatRoom from '~/components/ChatRoom.vue';
 	import LiveScript from '~/components/LiveScript.vue';
 	import ControllPanel from '~/components/ControllPanel.vue';
