@@ -9,7 +9,6 @@ loadinfo();
 loadcontent('worker');
 loadtimeline();
 set_ptc_client();
-chat_client();
 
 function clock_state(state) {
 	if (state == 'auto') {

@@ -7,16 +7,6 @@
 		<link rel="stylesheet" href="{% static 'css/tailwindcss.css' %}" />
 		<link rel="stylesheet" href="{% static 'css/daisyui.css' %}" />
 		<link rel="icon" href="{% static 'image/favicon.ico' %}" />
-		<script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
-		<script src="{% static 'js/jquery-ui.js' %}"></script>
-		<link rel="manifest" href="{% static 'manifest.json' %}" />
-		<script>
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('sw.js').then(function () {
-					console.log('Service Worker Registered');
-				});
-			}
-		</script>
 	</head>
 	<body>
 		<div class="h-screen w-screen">
@@ -90,9 +80,9 @@
 				let paramstring = '';
 				for (var i = 0; i < param.length; i++) {
 					if (i == 0) {
-						paramstring += '?req[]=' + i;
+						paramstring += '?req[]=' + param[i];
 					} else {
-						paramstring += '&req[]=' + i;
+						paramstring += '&req[]=' + param[i];
 					}
 				}
 				window.location.href = paramstring;
