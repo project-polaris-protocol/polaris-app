@@ -1,0 +1,76 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<section>
+	<div style="height: 80vh">
+		<div class="columns">
+			<div class="column px-1">
+				<section class="mt-3"><div id="content"></div></section>
+			</div>
+			<div class="column is-3" style="max-width: 28rem">
+				<div class="m-3" id="info"></div>
+				<section>
+					<div class="mt-2" style="height: 30vh">
+						<div class="box m-2">
+							<div class="mx-3 mr-6">
+								<div class="columns text-absolute">
+									<div class="column is-6"><p class="is-size-6">全体経過秒数:</p></div>
+									<div class="column has-text-right">
+										<b><p id="clock-content" class="is-size-1">0</p></b>
+									</div>
+								</div>
+								<hr />
+								<div class="columns text-relative">
+									<div class="column is-6"><p class="is-size-6">次の指示まで</p></div>
+									<div class="column has-text-right">
+										<b><p id="timer-content" class="is-size-2">-</p></b>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="mx-3">
+					<div class="columns">
+						<div class="column is-6">
+							<div style="height: 50px">
+								<div class="help" id="last_number"></div>
+								<div class="is-size-6" id="last_title"></div>
+							</div>
+							<br />
+							<button class="button is-outlined is-fullwidth" id="move_back_button" style="height: 50px" onclick="move_program('back')">前に戻る</button>
+						</div>
+						<div class="column is-6">
+							<div style="height: 50px">
+								<div class="help" id="next_number"></div>
+								<div class="is-size-6" id="next_title"></div>
+							</div>
+							<br />
+							<button class="button is-outlined is-info is-fullwidth" id="move_next_button" style="height: 50px" onclick="move_program('next')">次に進む</button>
+						</div>
+					</div>
+					<div class="m-2">
+						<button class="button is-danger is-fullwidth" onclick="end()" style="background-color: #7d0051">停止</button>
+					</div>
+				</section>
+				<hr />
+				<section class="m-3">
+					<div id="standby_area">
+						<button class="button is-size-4 is-fullwidth" style="background-color: #517d00; height: 120px; color: aliceblue" onclick="start()" id="standby_button">START</button>
+					</div>
+					<div id="manualstart_area"></div>
+					<div id="skip_area" class="is-hidden">
+						<button class="is-info button is-info is-size-4 is-fullwidth" onclick="aoc_change()" id="skip_button" style="background-color: #00517c; height: 120px">DONE</button>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</section>
+<div hidden>
+	<div id="node_request">{{ node_request }}</div>
+</div>
+<script src="{% static 'js/moderator/SmartReloader.js' %}"></script>
+<script src="{% static 'js/moderator/aoc.js' %}"></script>
+<script src="{% static 'js/moderator/aoc_rs.js' %}"></script>
+<script src="{% static 'js/moderator/admincontroller.js' %}"></script>
+
+{% endblock %}

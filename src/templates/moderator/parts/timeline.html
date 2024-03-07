@@ -1,0 +1,14 @@
+<section>
+	<div class="m-1">
+		{% for timeline in timelines %}
+		<div class="box m-2">
+			<div class="columns">
+				<div class="column is-2"># {{ timeline.layerNumber }}</div>
+				<div class="column is-5"><strong>{{ timeline.layerName }}</strong></div>
+				<div class="column is-5">担当者：{{ timeline.iss }}</div>
+			</div>
+			<div>{{ timeline.stt }} {{ timeline.end }}</div>
+		</div>
+		{% endfor %}
+	</div>
+</section>

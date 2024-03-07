@@ -1,0 +1,26 @@
+{% load static %}
+<div class="card-content content bms_messages">
+	{% for msg in chat reversed %} {% if msg.ip != ip %}
+	<div class="bms_message bms_left">
+		<div class="bms_message_box">
+			<div class="bms_message_content">
+				<div class="bms_message_text">{{ msg.content}}</div>
+			</div>
+		</div>
+		<p style="color: #778899; font-size: 12px">{{ msg.sendtime }}</p>
+	</div>
+	<div class="bms_clear"></div>
+	<!-- 回り込みを解除（スタイルはcssで充てる） -->
+	{% else %}
+	<div class="bms_message bms_right">
+		<div class="bms_message_box">
+			<div class="bms_message_content">
+				<div class="bms_message_text">{{ msg.content}}</div>
+			</div>
+		</div>
+		<p style="color: #778899; font-size: 12px; text-align: right">{{ msg.sendtime }}</p>
+	</div>
+	<div class="bms_clear"></div>
+	<!-- 回り込みを解除（スタイルはcssで充てる） -->
+	{% endif %} {% endfor %}
+</div>

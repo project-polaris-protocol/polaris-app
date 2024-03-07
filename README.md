@@ -1,75 +1,56 @@
-# Nuxt 3 Minimal Starter
+# Polaris Stage
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Polaris StageはPLProtoに準拠したローカルネットワーク向けのクライアントソフトウェアです。
 
 ## Setup
 
-Make sure to install the dependencies:
+Polaris Stageを動作させるためにはPython3.10以上の環境が必要です。
 
-```bash
-# npm
-npm install
+### Pythonのバージョン確認
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+```cmd
+python --version
 ```
 
-## Development Server
+バージョンが3.10以上であることを確認してください
 
-Start the development server on `http://localhost:3000`:
+### Polarisのダウンロード
 
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+```cmd
+git clone https://github.com/polaris-proto/polaris-stage
+cd polaris-stage
 ```
 
-## Production
+### 依存ライブラリのインストール
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+```cmd
+pip install -r requirements.txt
 ```
 
-Locally preview production build:
+### Polaris Proto準拠のjsonファイルを準備する
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+```cmd
+- polaris-stage
+    - src
+        - data
+            - meta.json
+            - layer
+                01-a.json
+                02-b.json
+                ・・・
+        - polaris
+        ・・・
+    - requirements.txt
+    - README
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+※meta.jsonのファイル名を変更することはできません
+> PLProtoに関する詳細な仕様は以下を参照してください
+>
+> [protocol-docs on github](https://github.com/polaris-proto/protocol-docs)
+
+### Polaris Stageを起動する
+
+```cmd
+python src/manage.py runserver <IPアドレス>:80
+```

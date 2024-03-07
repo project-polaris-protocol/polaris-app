@@ -1,0 +1,13 @@
+<section>
+	<div class="m-1" style="width: 100%">
+		{% if layer != None %}
+		<p class="is-size-4 m-1 has-text-centered">{{ layer.layerName }}</p>
+		<hr />
+		<div style="display: flex">
+			<span class="m-1 has-text-lightgray has-text-left" style="font-size: 16px">No.{{ layer.layerNumber }}</span>
+			<span class="m-1 has-text-right" style="font-size: 16px">担当者： {{ layer.isc }} {{ layer.iss }}</span>
+		</div>
+		{% endif %}
+		<div id="programID" hidden>{{ layer.layerIndex }}</div>
+	</div>
+</section>

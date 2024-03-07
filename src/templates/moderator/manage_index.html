@@ -1,0 +1,17 @@
+{% extends 'base.html' %}{% load static %} {% block content %}
+<section>
+	<div style="height: 90vh">
+		<div class="columns">
+			<div class="column px-1">
+				<section class="mt-3"><div id="timeline"></div></section>
+			</div>
+		</div>
+	</div>
+</section>
+<script src="{% static 'js/moderator/SmartReloader.js' %}"></script>
+<script src="{% static 'js/moderator/aoc.js' %}"></script>
+<!--
+<script src="{% static 'js/moderator/aoc_rs.js' %}"></script>
+-->
+<script src="{% static 'js/moderator/manage.js' %}"></script>
+{% endblock %}

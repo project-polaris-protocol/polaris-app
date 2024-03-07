@@ -1,0 +1,52 @@
+<section>
+	<div>
+		{% if cards == None %}
+		<div class="has-text-centered hero" style="height: 90vh; background-color: whitesmoke">
+			<div class="hero-body">
+				<strong class="is-size-2">NO DATA</strong>
+				<p class="my-4">指示情報がありません</p>
+			</div>
+		</div>
+		{% else %}
+		<div style="display: flex">
+			{% for col in cols %}
+			<div style="width: 100%; text-align: center; font-weight: bold">{{ col }}</div>
+			<hr />
+			{% endfor %}
+		</div>
+		<div style="max-height: 83vh; overflow-y: auto">
+			{% for sec in cards %}
+			<div style="display: flex" class="is-card-active" id="{{ forloop.counter0 }}">
+				<div hidden>
+					<div class="is-object-state">{{ sec.0.object }}</div>
+					<div class="is-time-active">{{ sec.0.pointer }}</div>
+				</div>
+				{% for cell in sec %} {% if cell.content != '' or cell.color != '#ffffff' %}
+				<div class="card m-2" style="background-color: {{ cell.color }}; width: 100%;">
+					<div class="card-content">
+						{% if cell.object == 'ABSOLUTE' %}
+						<div class="my-3 text-absolute" style="font-weight: 600">Absolute</div>
+						<div class="is-size-3"><b class="">{{ cell.pointer }}</b><c class="is-size-5"> 秒</c></div>
+						{% elif cell.object == 'RELATIVE' %}
+						<p class="my-3 text-relative" style="font-weight: 600">Relative</p>
+						<div class="is-size-3"><b class="">{{ cell.pointer }}</b><c class="is-size-5"> 秒後</c></div>
+						{% elif cell.object == 'ACTION' %}
+						<p class="is-light tag is-size-5 is-info my-3">ACTION</p>
+						<div class="is-size-4">
+							<b class="">{{ cell.pointer }}</b>
+
+							<br />
+						</div>
+						{% endif %}
+
+						<p class="m-1 is-size-4">{{ cell.content | linebreaksbr }}</p>
+					</div>
+				</div>
+				{% else %}
+				<div class="m-2" style="width: 100%"></div>
+				{% endif %} {% endfor %}
+			</div>
+			{% endfor %} {% endif %}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,40 @@
+{% load humanize %}
+<section>
+    <div class="is-multiline m-2" style="overflow-wrap: initial">
+        {% for device in devices %}
+        <div class="is-3" style="width: 15vw; min-width: 300px; float: left">
+            <div class="box m-1">
+                <div class="columns m-0">
+                    <div class="column is-8 m-0">
+                        <strong>{{ device.user.first_name }}</strong>
+                    </div>
+                    <div class="column is-4 m-0">
+                        {% if device.remote %}
+                        <p class="button is-dont-click is-success is-light">同期</p>
+                        {% else %}
+                        <p class="button is-dont-click is-info is-light">独立</p>
+                        {% endif %}
+                        <div class="device_time" hidden>{{ device.time }}</div>
+                    </div>
+                </div>
+                <hr />
+                <div class="column m-0">
+                    {% if device.user.is_staff %}
+                    <p class="button is-dark is-light is-dont-click is-fullwidth">ADMIN</p>
+                    {% else %} {% if not device.pal %} {% if device.status == "prepare" %}
+                    <p class="button is-gray is-light is-dont-click is-fullwidth">{{ device.status }}</p>
+                    {% elif device.status == "ready" %}
+                    <p class="button is-success is-dont-click is-fullwidth">{{ device.status }}</p>
+                    {% elif device.status == "aoc" %}
+                    <p class="button is-info is-dont-click is-fullwidth">{{ device.status }}</p>
+                    {% else %}
+                    <p class="button is-dark is-light is-dont-click is-fullwidth">Unknown</p>
+                    {% endif %} {% else %}
+                    <p class="button is-danger is-dont-click is-fullwidth">PAL</p>
+                    {% endif %} {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

@@ -1,0 +1,13 @@
+.is-hidden {
+    display: none;
+}
+
+.is-dont-click {
+    pointer-events: none !important;
+}
+.tab-item {
+    display: none;
+}
+.tab-item.is-active {
+    display: block;
+}

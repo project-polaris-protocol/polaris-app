@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<section>
+	<div class="columns">
+		<div class="column is-3">
+			<div style="height: 90vh" id="timeline"></div>
+		</div>
+		<div class="column is-6">
+			<section><div id="content" style="max-height: 90vh; overflow-y: auto"></div></section>
+		</div>
+		<div class="column is-3" style="max-width: 28rem">
+			<div class="m-3" id="info"></div>
+			<section>
+				<div class="mt-6" style="height: 30vh">
+					<div class="box m-2">
+						<div class="mx-3 mr-6">
+							<div class="columns text-absolute">
+								<div class="column is-6"><p class="is-size-6 text-absolute">全体経過秒数:</p></div>
+								<div class="column has-text-right">
+									<b><p id="clock-content" class="is-size-1">0</p></b>
+								</div>
+							</div>
+							<hr />
+							<div class="columns text-relative">
+								<div class="column is-6"><p class="is-size-6">次の指示まで</p></div>
+								<div class="column has-text-right">
+									<b><p id="timer-content" class="is-size-2">-</p></b>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="m-2">
+					<p class="is-size-6">次のプログラム:</p>
+					<div class="columns my-2">
+						<div class="column is-2"><div class="is-size-5 has-text-centered" id="next_number"></div></div>
+						<div class="column is-10"><div class="is-size-4" id="next_title"></div></div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</section>
+<div hidden>
+	<div id="node_request">{{ node_request }}</div>
+</div>
+<script src="{% static 'js/moderator/chatmanager.js' %}"></script>
+<script src="{% static 'js/moderator/SmartReloader.js' %}"></script>
+<script src="{% static 'js/moderator/ptc.js' %}"></script>
+<script src="{% static 'js/moderator/aoc.js' %}"></script>
+<script src="{% static 'js/moderator/aoc_rs.js' %}"></script>
+<script src="{% static 'js/moderator/controller.js' %}"></script>
+{% endblock %}
