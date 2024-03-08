@@ -10,6 +10,7 @@
 	</head>
 	<body>
 		<div class="h-screen w-screen">
+			{% if metadata %}
 			<div class="hidden md:flex h-full w-full">
 				<div class="w-1/2 h-full">
 					<div class="flex items-center justify-center h-full">
@@ -67,6 +68,17 @@
 					<div class="is-size-4">モバイル端末では利用できません</div>
 				</div>
 			</div>
+			{% else %}
+			<div class="flex items-center justify-center h-screen">
+				<div>
+					<div class="text-3xl text-relative">PLProto Data Load Eroor</div>
+					<div class="my-4 divider"></div>
+					<div class="my-2">src/dataディレクトリ下に適切にjsonファイルが置かれているかどうかを確認してください</div>
+					<div class="my-2">レイヤーデータの「aud」「projectCode」「bodyの列数」がメタデータと一致していることを確認してください</div>
+					<div class="my-2">jsonファイルがPLProtoに準拠していることを確認してください</div>
+				</div>
+			</div>
+			{% endif %}
 		</div>
 		<script>
 			function setup_pc() {
