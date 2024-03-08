@@ -36,6 +36,12 @@ except:
     layer_data = None
 layers = ['']*len(layer_data)
 for layer in layer_data:
+    for sec in layer['body']:
+        if not len(sec) == len(meta['col']):
+            layer = None
+            break
+    if not layer:
+        break
     if layer['aud'] == meta['aud'] and layer['projectCode'] == meta['projectCode']:
         layers[layer['layerIndex']] = layer
 if '' in layers:
