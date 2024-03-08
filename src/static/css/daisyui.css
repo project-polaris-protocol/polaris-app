@@ -3586,37 +3586,6 @@ html {
 	margin-right: 1.5rem;
 	font-size: 1.125rem;
 }
-.input-xs {
-	height: 1.5rem;
-	padding-left: 0.5rem;
-	padding-right: 0.5rem;
-	font-size: 0.75rem;
-	line-height: 1rem;
-	line-height: 1.625;
-}
-.input-md {
-	height: 3rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	font-size: 0.875rem;
-	line-height: 1.25rem;
-	line-height: 2;
-}
-.input-lg {
-	height: 4rem;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
-	font-size: 1.125rem;
-	line-height: 1.75rem;
-	line-height: 2;
-}
-.input-sm {
-	height: 2rem;
-	padding-left: 0.75rem;
-	padding-right: 0.75rem;
-	font-size: 0.875rem;
-	line-height: 2rem;
-}
 .card-compact .card-body {
 	padding: 1rem;
 	font-size: 0.875rem;
@@ -3632,20 +3601,4 @@ html {
 }
 .card-normal .card-title {
 	margin-bottom: 0.75rem;
-}
-.divider-horizontal {
-	margin-left: 1rem;
-	margin-right: 1rem;
-	margin-top: 0;
-	margin-bottom: 0;
-	height: auto;
-	width: 1rem;
-}
-.divider-vertical {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-	height: 1rem;
-	width: auto;
 }
