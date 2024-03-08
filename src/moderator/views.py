@@ -26,8 +26,21 @@ def read_layer_jsons(folder_path):
 ## 進行管理変数の定義
 current_layer = 0
 current_section = 0
-meta = read_meta_json('./src/data/meta.json')
-layers = read_layer_jsons('./src/data/layer')
+try:
+    meta = read_meta_json('./src/data/meta.json')
+except: 
+    meta = None
+try:
+    layer_data = read_layer_jsons('./src/data/layer')
+except: 
+    layer_data = None
+layers = ['']*len(layer_data)
+for layer in layer_data:
+    if layer['aud'] == meta['aud'] and layer['projectCode'] == meta['projectCode']:
+        layers[layer['layerIndex']] = layer
+if '' in layers:
+    layers = None
+
 ## 時刻同期用変数
 time_starttime = 0
 time_status = False
@@ -44,6 +57,10 @@ def client(request):
     global current_section
     global time_status
     global chat
+    global layers
+    global meta
+    if layers == None or meta == None:
+        return render(request, 'index.html',{"metadata": None})
     if len(layers) > current_layer:
         layer = layers[current_layer]
     else:
@@ -141,6 +158,10 @@ def admin(request):
     global current_section
     global time_starttime
     global time_status
+    global layer
+    global meta
+    if layers == None or meta == None:
+        return render(request, 'index.html',{"metadata": None})
     if request.method == "POST":
         match request.POST["type"]:
             ### SmartReloader
@@ -187,4 +208,8 @@ def admin(request):
         return render(request,'moderator/admin_index.html')
     
 def manage(request):
+    global layers
+    global meta
+    if layers == None or meta == None:
+        return render(request, 'index.html',{"metadata": None})
     return render(request,'moderator/manage_index.html')
