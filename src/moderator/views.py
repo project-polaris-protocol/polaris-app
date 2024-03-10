@@ -32,20 +32,21 @@ except:
     meta = None
 try:
     layer_data = read_layer_jsons('./src/data/layer')
-except: 
-    layer_data = None
-layers = ['']*len(layer_data)
-for layer in layer_data:
-    for sec in layer['body']:
-        if not len(sec) == len(meta['col']):
-            layer = None
+    layers = ['']*len(layer_data)
+    for layer in layer_data:
+        for sec in layer['body']:
+            if not len(sec) == len(meta['col']):
+                layer = None
+                break
+        if not layer:
             break
-    if not layer:
-        break
-    if layer['aud'] == meta['aud'] and layer['projectCode'] == meta['projectCode']:
-        layers[layer['layerIndex']] = layer
-if '' in layers:
+        if layer['aud'] == meta['aud'] and layer['projectCode'] == meta['projectCode']:
+            layers[layer['layerIndex']] = layer
+    if '' in layers:
+        layers = None
+except:
     layers = None
+    layer_data = None
 
 ## 時刻同期用変数
 time_starttime = 0
