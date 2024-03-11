@@ -74,7 +74,6 @@ function aoc_change() {
 
 function setTimer(time) {
 	const relative_timer_id = setInterval(() => {
-		console.log(time);
 		time -= 1;
 		document.getElementById('timer-content').textContent = time;
 		if (time <= 0) {
