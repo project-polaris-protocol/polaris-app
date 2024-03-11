@@ -92,8 +92,8 @@ const program_detection = setInterval(() => {
 		dataType: 'text',
 		success: function (data) {
 			const programID = document.getElementById('programID').textContent;
-			if (data == programID) {
-			} else if (data != programID) {
+			if (JSON.parse(data)[0] == programID && JSON.parse(data)[1] == true) {
+			} else if (JSON.parse(data)[0] != programID || JSON.parse(data)[1] == false) {
 				aoc_core(0, 'end');
 				loadcontent('controller');
 				loadinfo();

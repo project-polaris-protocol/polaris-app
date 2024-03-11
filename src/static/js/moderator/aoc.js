@@ -76,6 +76,9 @@ function setTimer(time) {
 	const relative_timer_id = setInterval(() => {
 		time -= 1;
 		document.getElementById('timer-content').textContent = time;
+		if (Number(document.getElementById('clock-content').textContent) == 0) {
+			clearInterval(relative_timer_id);
+		}
 		if (time <= 0) {
 			document.getElementById('timer-content').textContent = '-';
 			aoc_change();

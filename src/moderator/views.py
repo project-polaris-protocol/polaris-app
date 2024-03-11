@@ -123,7 +123,7 @@ def client(request):
                 return HttpResponse(data)
             ### Controller
             case 'check_program':
-                return HttpResponse(str(current_layer))
+                return JsonResponse([str(current_layer),time_status], safe=False)
             ### AOC-RS(Auto Operation Controll Realtime Sync)
             case 'remote_sync_client':
                 return HttpResponse(current_section)
