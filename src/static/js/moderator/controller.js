@@ -39,10 +39,12 @@ const program_detection = setInterval(() => {
 			const programID = document.getElementById('programID').textContent;
 			if (data == programID) {
 			} else if (data != programID) {
+				document.getElementById('programID').textContent = programID;
 				aoc_core(0, 'end');
 				loadcontent('worker');
 				loadinfo();
 				set_ptc_client();
+				console.log('smr');
 			}
 		},
 		error: function (jqXHR, textStatus, errorThrown) {

@@ -7,8 +7,8 @@ function aoc_core(duringTime, command) {
 		} else {
 			clearInterval(main_interval);
 			aoc_client_reset();
-			document.getElementById('clock-content').textContent = '';
-			document.getElementById('timer-content').textContent = '';
+			document.getElementById('clock-content').textContent = '0';
+			document.getElementById('timer-content').textContent = '-';
 		}
 	}
 }

@@ -3,6 +3,20 @@ const aoc_rs_send = () => {
 	const aoc_rs_send_id = setInterval(() => {
 		let cardset = document.getElementsByClassName('is-card-active');
 		if (cardset[0] == undefined) {
+			$.ajax({
+				url: '/moderator/admin/',
+				type: 'POST',
+				data: {
+					type: 'remote_sync',
+					number: -1,
+				},
+				dataType: 'text',
+				success: function (data) {},
+				error: function (jqXHR, textStatus, errorThrown) {
+					// エラーハンドリング
+					window.alert('システムとのリンクを確立できません');
+				},
+			});
 			clearInterval(aoc_rs_send_id);
 			return;
 		}
@@ -49,11 +63,17 @@ const aoc_rs_recieve = () => {
 
 function aoc_rs_exec(number) {
 	let cardset = document.getElementsByClassName('is-card-active');
-	for (let i = 0; cardset.length > 0; i++) {
-		if (Number(cardset[i].id) < number) {
+	for (let i = 0; cardset.length > i; i++) {
+		if (number < 0) {
+			clearInterval(aoc_rs_recieve_id);
 			aoc_change();
+			aoc_core(0, 'end');
 		} else {
-			return;
+			if (Number(cardset[i].id) < number) {
+				aoc_change();
+			} else {
+				return;
+			}
 		}
 	}
 }
