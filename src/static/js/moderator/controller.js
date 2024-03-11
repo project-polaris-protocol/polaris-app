@@ -43,8 +43,8 @@ const program_detection = setInterval(() => {
 				aoc_core(0, 'end');
 				loadcontent('worker');
 				loadinfo();
+				clearInterval(intervalId);
 				set_ptc_client();
-				console.log('smr');
 			}
 		},
 		error: function (jqXHR, textStatus, errorThrown) {
