@@ -1,0 +1,45 @@
+{
+    "projectCode": "",
+    "layerName": "",
+    "layerIndex": 0,
+    "layerNumber": "",
+    "stt": "",
+    "end": "",
+    "aud": "",
+    "iss": "",
+    "isc": 0,
+    "body": [
+        [
+            {
+                "object": "ACTION",
+                "color": "#ffffff",
+                "pointer": "",
+                "content": ""
+            },
+            {
+                "object": "ACTION",
+                "color": "#ffffff",
+                "pointer": "",
+                "content": ""
+            },
+            {
+                "object": "ACTION",
+                "color": "#ffffff",
+                "pointer": "",
+                "content": ""
+            },
+            {
+                "object": "ACTION",
+                "color": "#ffffff",
+                "pointer": "",
+                "content": ""
+            },
+            {
+                "object": "ACTION",
+                "color": "#ffffff",
+                "pointer": "",
+                "content": ""
+            }
+        ]
+    ]
+}
