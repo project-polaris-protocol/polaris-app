@@ -8,7 +8,8 @@ function load_chat(node_type) {
 		dataType: 'html',
 	})
 		.done(function (data) {
-			document.getElementById('chat').innerHTML = data;
+            console.log(data)
+			document.getElementById('chat').innerHTML =data;
 		})
 		.fail(function (data) {
 			// error
@@ -21,19 +22,24 @@ function chat_client() {
 }
 
 function chat_send() {
-	if (document.getElementById('chat_content').value == '') {
-		return;
-	}
-	$.ajax({
-		type: 'POST',
-		url: '/moderator/',
-		data: {
-			type: 'send_chat',
-			content: document.getElementById('chat_content').value,
-		},
-		dataType: 'html',
-	}).fail(function (data) {
-		// error
-		window.alert('システムに接続できません');
-	});
+    if (document.getElementById('chat_content').value == '') {
+        return;
+    }
+    $.ajax({
+        type: 'POST',
+        url: '/moderator/',
+        data: {
+            type: 'send_chat',
+            content: document.getElementById('chat_content').value,
+        },
+        dataType: 'html',
+    })
+    .done(function (data) {
+        chat_client();
+        document.getElementById('chat_content').value = '';
+    })
+    .fail(function (data) {
+        // エラーハンドリング
+        window.alert('システムに接続できません');
+    });
 }
