@@ -42,6 +42,16 @@
 		</div>
 	</div>
 </section>
+<div style="float: right;">
+	<button style=" background-color: #917c50; color: #fff; font-size:8px " type="button" onclick="chat_client()">読み込み</button>
+    <form onsubmit="event.preventDefault(); chat_send();">
+		{% csrf_token %}
+        <label for="chat_content"></label>
+        <input class="input" style=" border: 1px solid #000; "  type="text" placeholder="テキスト入力..." id="chat_content">
+        <button class="button" style="border-radius: 20px; background-color: #004aad; color: #fff;" type="submit">送信</button>
+    </form>
+</div>
+<div id="chat"></div>
 <div hidden>
 	<div id="node_request">{{ node_request }}</div>
 </div>
