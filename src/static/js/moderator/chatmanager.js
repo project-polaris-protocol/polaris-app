@@ -8,7 +8,6 @@ function load_chat(node_type) {
 		dataType: 'html',
 	})
 		.done(function (data) {
-            console.log(data)
 			document.getElementById('chat').innerHTML =data;
 		})
 		.fail(function (data) {
